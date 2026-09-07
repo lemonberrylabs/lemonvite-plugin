@@ -1,7 +1,7 @@
 ---
 name: lemonvite-invitations
 description: "Create, design and send digital event invitations with RSVP tracking through Lemonvite: turn an event described in chat into an invitation draft, manage the guest list, publish to deliver the invitations, and read who has responded. Use when the user wants a real invitation, RSVP page or guest list for a party, celebration, shower, reunion or any gathering, or mentions Lemonvite."
-license: "Proprietary. Free to use with a Lemonvite account."
+license: "Apache-2.0"
 metadata:
   publisher: Lemonvite
   version: "1"

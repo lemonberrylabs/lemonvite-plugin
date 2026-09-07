@@ -28,6 +28,12 @@ publishing costs one publish credit and delivers the invitations.
 
 Generated from the lemonvite repository (`pnpm plugin:sync`). Edit it there, not here.
 
+## License
+
+The files in this repository are Apache-2.0 ([LICENSE](./LICENSE)).
+That covers the plugin files only: using the Lemonvite service is governed by
+https://www.lemonvite.com/terms, and the license grants no right to the Lemonvite name or marks.
+
 ## Links
 
 - Website: https://www.lemonvite.com
