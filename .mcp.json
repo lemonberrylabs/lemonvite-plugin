@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "lemonvite": {
+      "type": "http",
+      "url": "https://www.lemonvite.com/api/mcp"
+    }
+  }
+}
