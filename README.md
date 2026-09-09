@@ -1,6 +1,7 @@
 # Lemonvite plugin
 
 [![Available on Smithery](./assets/smithery-badge.svg)](https://smithery.ai/servers/lemonvite/lemonvite)
+[![MCP Registry: Listed](./assets/mcp-registry-badge.svg)](https://registry.modelcontextprotocol.io/?q=com.lemonvite%2Flemonvite)
 
 Create, design and send digital invitations with RSVP tracking from Claude
 Code or Codex. The plugin bundles the Lemonvite MCP connection
@@ -41,6 +42,20 @@ For local development: clone this repo and run
 Official directory approval is not required for these marketplace installs.
 [SETUP.md](./SETUP.md) covers authentication and troubleshooting.
 
+## Other terminal agents
+
+Connect directly to the hosted MCP server; no plugin bundle is required.
+
+| Agent | Installation guide |
+| --- | --- |
+| Gemini CLI | [Add the server and sign in](./SETUP.md#gemini-cli) |
+| GitHub Copilot CLI | [Add the server and sign in](./SETUP.md#github-copilot-cli) |
+| OpenCode v2 | [Configure a remote server](./SETUP.md#opencode-v2) |
+
+These routes connect Lemonvite tools. They do not install the bundled skill.
+Instructions checked against provider docs on September 9, 2026; end-to-end
+Lemonvite sign-in/tool checks are still pending for these three clients.
+
 ## Skill only (separate MCP setup required)
 
 `npx skills add lemonberrylabs/lemonvite-plugin --skill lemonvite-invitations`
@@ -72,3 +87,8 @@ https://www.lemonvite.com/terms, and the license grants no right to the Lemonvit
 - Privacy: https://www.lemonvite.com/privacy
 - FAQ: https://www.lemonvite.com/faq
 - Server card: https://www.lemonvite.com/api/mcp/server-card
+- Official MCP Registry: https://registry.modelcontextprotocol.io/?q=com.lemonvite%2Flemonvite
+- Published registry record (JSON): https://registry.modelcontextprotocol.io/v0.1/servers/com.lemonvite%2Flemonvite/versions/1.0.0
+
+The registry badge is our static, locally stored link badge, not an official
+certification or live health indicator.
