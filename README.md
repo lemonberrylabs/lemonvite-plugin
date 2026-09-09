@@ -1,5 +1,7 @@
 # Lemonvite plugin
 
+[![smithery badge](https://smithery.ai/badge/lemonvite/lemonvite)](https://smithery.ai/servers/lemonvite/lemonvite)
+
 Create, design and send digital invitations with RSVP tracking from Claude
 Code or Codex. The plugin bundles the Lemonvite MCP connection
 (`https://www.lemonvite.com/api/mcp`) and ships the skill that teaches the workflow: draft, review,
