@@ -1,0 +1,20 @@
+{
+  "name": "lemonvite",
+  "interface": {
+    "displayName": "Lemonvite"
+  },
+  "plugins": [
+    {
+      "name": "lemonvite",
+      "source": {
+        "source": "local",
+        "path": "./plugins/lemonvite"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

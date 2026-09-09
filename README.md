@@ -11,18 +11,32 @@ publishing costs one publish credit and delivers the invitations.
 
 ## Install the full plugin (recommended)
 
-Clone this repository:
+### Codex
 
-`git clone https://github.com/lemonberrylabs/lemonvite-plugin.git`
+Run in your terminal:
 
-- **Claude Code:** run `claude --plugin-dir ./lemonvite-plugin`, then
-  `/mcp` → `lemonvite` → Authenticate.
-- **Codex:** open the cloned folder and ask Codex to install it as a local
-  plugin using its plugin-creator skill. The bundle includes
-  `.codex-plugin/plugin.json`, the skill and the MCP configuration.
-  Enable the installed plugin, complete sign-in, and start a new thread.
+```sh
+codex plugin marketplace add lemonberrylabs/lemonvite-plugin
+codex plugin add lemonvite@lemonvite
+```
 
-Official directory approval is not required for this local setup.
+Restart Codex, enable Lemonvite in Plugins, complete sign-in, and start a new
+thread. No manual MCP URL setup is needed.
+
+### Claude Code
+
+Run inside Claude Code:
+
+```text
+/plugin marketplace add lemonberrylabs/lemonvite-plugin
+/plugin install lemonvite@lemonvite
+```
+
+Reload plugins if prompted, then use `/mcp` → `lemonvite` → Authenticate.
+For local development: clone this repo and run
+`claude --plugin-dir ./lemonvite-plugin/plugins/lemonvite`.
+
+Official directory approval is not required for these marketplace installs.
 [SETUP.md](./SETUP.md) covers authentication and troubleshooting.
 
 ## Skill only (separate MCP setup required)
@@ -35,10 +49,11 @@ assistant and sign in separately, or install the full plugin above.
 
 ## Contents
 
-- `.claude-plugin/plugin.json`: the Claude plugin manifest
-- `.codex-plugin/plugin.json`: the Codex plugin manifest
-- `.mcp.json`: the Lemonvite MCP server (remote, streamable HTTP, OAuth)
-- `skills/lemonvite-invitations/SKILL.md`: the skill, identical to
+- `.agents/plugins/marketplace.json`: Codex marketplace
+- `.claude-plugin/marketplace.json`: Claude marketplace
+- `plugins/lemonvite/`: self-contained plugin bundle with both manifests,
+  `.mcp.json`, setup instructions and license
+- `plugins/lemonvite/skills/lemonvite-invitations/SKILL.md`: skill, identical to
   https://www.lemonvite.com/.well-known/agent-skills/lemonvite-invitations/SKILL.md
 
 Generated from the lemonvite repository (`pnpm plugin:sync`). Edit it there, not here.

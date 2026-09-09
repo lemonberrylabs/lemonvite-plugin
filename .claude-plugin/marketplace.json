@@ -1,0 +1,13 @@
+{
+  "name": "lemonvite",
+  "owner": {
+    "name": "Lemonvite"
+  },
+  "plugins": [
+    {
+      "name": "lemonvite",
+      "source": "./plugins/lemonvite",
+      "description": "Create, design and send digital invitations with RSVP tracking from your assistant, through the Lemonvite MCP server."
+    }
+  ]
+}
