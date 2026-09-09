@@ -3,6 +3,8 @@
 The plugin declares one remote MCP server, `lemonvite`, at
 `https://www.lemonvite.com/api/mcp`. It uses OAuth 2.1; there is no API key to enter.
 
+## Claude Code
+
 1. Enable the plugin. Claude Code registers the server from `.mcp.json`.
 2. Run `/mcp`, pick `lemonvite`, and choose Authenticate. A browser tab
    opens the Lemonvite sign-in and consent page.
@@ -12,10 +14,22 @@ The plugin declares one remote MCP server, `lemonvite`, at
 4. Approve the consent screen. Claude Code stores the tokens; nothing else to
    configure.
 
+## Codex
+
+Install this folder as a local plugin with the plugin-creator skill, then
+open the plugin in Codex and complete its sign-in flow. Start a new thread
+after installation so the skill and MCP tools are loaded together.
+
+## Verify / troubleshoot
+
 Check the connection with a read-only call, for example "list my Lemonvite
 invitations" (`lemonvite_list_invitations`).
 
-To disconnect: `/mcp` → `lemonvite` → Clear authentication, or
+If tools are missing, check that the **plugin** is enabled, rather than only
+its skill. Complete authentication and retry in a new session. Installing
+with `npx skills add` alone never registers the MCP connection.
+
+To disconnect in Claude Code: `/mcp` → `lemonvite` → Clear authentication, or
 Settings → Connected assistants on https://www.lemonvite.com, which revokes the tokens
 server-side.
 

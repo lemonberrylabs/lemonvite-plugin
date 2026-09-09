@@ -1,0 +1,38 @@
+{
+  "name": "lemonvite",
+  "version": "1.1.0",
+  "description": "Create, design and send digital invitations with RSVP tracking from your assistant, through the Lemonvite MCP server.",
+  "author": {
+    "name": "Lemonvite",
+    "url": "https://www.lemonvite.com"
+  },
+  "homepage": "https://www.lemonvite.com",
+  "repository": "https://github.com/lemonberrylabs/lemonvite-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "invitations",
+    "events",
+    "rsvp",
+    "party",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Lemonvite",
+    "shortDescription": "Create invitations and track RSVPs.",
+    "longDescription": "Create, design and send digital invitations with RSVP tracking from your assistant, through the Lemonvite MCP server.",
+    "developerName": "Lemonvite",
+    "category": "Productivity",
+    "capabilities": [
+      "Write"
+    ],
+    "websiteURL": "https://www.lemonvite.com",
+    "privacyPolicyURL": "https://www.lemonvite.com/privacy",
+    "termsOfServiceURL": "https://www.lemonvite.com/terms",
+    "defaultPrompt": [
+      "List my Lemonvite invitations.",
+      "Help me draft an invitation for my event."
+    ]
+  }
+}

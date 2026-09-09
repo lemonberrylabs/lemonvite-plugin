@@ -1,27 +1,42 @@
 # Lemonvite plugin
 
 Create, design and send digital invitations with RSVP tracking from Claude
-Code or Cowork. The plugin connects Claude to the Lemonvite MCP server
+Code or Codex. The plugin bundles the Lemonvite MCP connection
 (`https://www.lemonvite.com/api/mcp`) and ships the skill that teaches the workflow: draft, review,
 add guests, pay if needed, publish, track.
 
-You sign in with your Lemonvite account when Claude first uses a tool (OAuth,
+After installing the plugin, sign in with your Lemonvite account (OAuth,
 no API key). Creating a draft never publishes, charges, or contacts anyone;
 publishing costs one publish credit and delivers the invitations.
 
-## Install
+## Install the full plugin (recommended)
 
-- Claude Code, from the official marketplace once listed:
-  `/plugin install lemonvite@claude-plugins-official`
-- Claude Code, from this repository:
-  `git clone https://github.com/lemonberrylabs/lemonvite-plugin.git` then `claude --plugin-dir ./lemonvite-plugin`
-- Skill only (skills.sh): `npx skills add lemonberrylabs/lemonvite-plugin`
+Clone this repository:
 
-[SETUP.md](./SETUP.md) has the connection steps.
+`git clone https://github.com/lemonberrylabs/lemonvite-plugin.git`
+
+- **Claude Code:** run `claude --plugin-dir ./lemonvite-plugin`, then
+  `/mcp` → `lemonvite` → Authenticate.
+- **Codex:** open the cloned folder and ask Codex to install it as a local
+  plugin using its plugin-creator skill. The bundle includes
+  `.codex-plugin/plugin.json`, the skill and the MCP configuration.
+  Enable the installed plugin, complete sign-in, and start a new thread.
+
+Official directory approval is not required for this local setup.
+[SETUP.md](./SETUP.md) covers authentication and troubleshooting.
+
+## Skill only (separate MCP setup required)
+
+`npx skills add lemonberrylabs/lemonvite-plugin --skill lemonvite-invitations`
+
+This installs workflow instructions only. It does **not** register the MCP
+server or attach tools to your session. Connect `https://www.lemonvite.com/api/mcp` in your
+assistant and sign in separately, or install the full plugin above.
 
 ## Contents
 
-- `.claude-plugin/plugin.json`: the plugin manifest
+- `.claude-plugin/plugin.json`: the Claude plugin manifest
+- `.codex-plugin/plugin.json`: the Codex plugin manifest
 - `.mcp.json`: the Lemonvite MCP server (remote, streamable HTTP, OAuth)
 - `skills/lemonvite-invitations/SKILL.md`: the skill, identical to
   https://www.lemonvite.com/.well-known/agent-skills/lemonvite-invitations/SKILL.md
