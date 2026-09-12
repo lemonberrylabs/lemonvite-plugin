@@ -53,7 +53,11 @@ below can be done on the website too.
    `design_brief` (theme, colours, mood) and optionally a `reference_image`
    from the conversation. It spends one of the host's design generations and
    replaces the current artwork, so confirm before calling. An image the
-   assistant made itself goes in through `invitation_image` instead.
+   assistant made itself goes in through `invitation_image` instead. To
+   change artwork the invitation already has ("make the sky a sunset"), use
+   `lemonvite_edit_design` with the user's request as `edit_request`, in
+   their own words: it spends a generation too and keeps everything the
+   request does not mention.
 4. **Guests** — `lemonvite_add_guests` in one batched call. Each guest needs a
    name, an email or a phone number. Adding by phone requires
    `host_confirms_sms_consent: true`, meaning the host confirmed those people
