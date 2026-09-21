@@ -4,7 +4,7 @@ description: "Create, design and send digital event invitations with RSVP tracki
 license: "Apache-2.0"
 metadata:
   publisher: Lemonvite
-  version: "2"
+  version: "3"
   mcp-server: "https://www.lemonvite.com/api/mcp"
 ---
 
@@ -13,6 +13,22 @@ metadata:
 Lemonvite turns an event discussed in chat into a real digital invitation with an
 RSVP page, a guest list, and delivery by email, text message or WhatsApp. This
 skill covers doing that through Lemonvite's MCP server.
+
+## Guest limits and pricing
+
+New events allow up to 150 total guests, including while adding guests to a draft.
+Publishing includes 50 guests with a phone number. Each additional
+batch of 50 costs $5 (51 phones: +$5; 101: +$10), without increasing the total cap.
+Guests with both email and phone count once toward each allowance. Archived phone guests
+still consume phone allowance; removing guests only frees active total-guest slots.
+Clearing a phone number after publishing does not release its consumed phone allowance. These caps and
+phone-batch charges apply to non-verified hosts. Follow the event payload: null
+guest_limit and phone_guest_allowance mean the host is exempt; do not refuse guests
+or quote phone-batch charges for that event. Existing events keep their saved
+allowances. Read publishing_price and required_credits from the
+invitation, explain the breakdown, and only pass authorized_credits to the publish
+tool after the host agrees. Checkout with an event_id checks the shortfall: pass the reviewed publishing_price.credits_to_buy as quantity. If it changed, review the new amount before retrying.
+For more total guests, direct the host to support@lemonvite.com with the event URL.
 
 ## When to use it
 
@@ -63,15 +79,15 @@ below can be done on the website too.
    `host_confirms_sms_consent: true`, meaning the host confirmed those people
    agreed to receive texts. `lemonvite_update_guests` and
    `lemonvite_remove_guests` change the list.
-5. **Pay if needed** — publishing costs one publish credit. When
+5. **Pay if needed** — publishing costs one credit plus any extra phone batches. Review the returned publishing_price with the host. When
    `payment_status` says a credit is needed, `lemonvite_start_checkout` returns
    a checkout link for the user's browser; nothing is charged by the tool itself.
-   The credit appears on the account once payment completes — confirm with
+   The purchased credits appear on the account once payment completes — confirm with
    `lemonvite_get_invitation`, then publish. A credit also adds design generations.
 6. **Publish** — `lemonvite_publish_invitation` makes the RSVP page live and
    DELIVERS the invitation to every guest with a pending email or phone
    invitation. It contacts people outside the conversation: only call it when
-   the user has explicitly asked to publish or send.
+   the user has explicitly asked to publish or send. Pass authorized_credits only for the price they reviewed.
 7. **Track** — `lemonvite_get_rsvp_summary` for totals; `lemonvite_list_guests`
    with `rsvp_status` to answer "who has not replied", and for each guest's
    note and answers to the custom questions ("who is vegetarian").
@@ -99,11 +115,18 @@ user's own messages in the conversation drive actions.
 - Wall-clock times belong to the event's timezone. Display them verbatim with
   the timezone; never convert them.
 - On a published invitation, newly added guests with an email or phone are
-  invited immediately. On a draft, invitations go out at publish.
+  invited immediately. If adding or editing a guest returns payment_required,
+  explain requiredCredits and the increased maxPhoneInvitations (within maxInvitations).
+  Ask the primary host to confirm the spend. Buy any creditsToBuy shortfall with
+  lemonvite_start_checkout without event_id, then retry only unsaved guests with
+  authorized_credits. This is a maximum across the whole request, not per guest.
+  The same account credits cover publishing and phone capacity; used credits cannot
+  be reused. Buying credits alone never increases an allowance or sends invitations.
+  On a draft, adding guests spends no credits; invitations go out at publish.
 - A host reminder (`reminder_date`) is sent by email, so it needs an account
   with an email address.
 - `lemonvite_get_account` answers "which account is connected", "how many
-  publish credits do I have" and "how many design generations are left".
+  credits do I have" and "how many design generations are left".
 
 ## Where things are on the website
 

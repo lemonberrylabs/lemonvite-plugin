@@ -10,7 +10,9 @@ add guests, pay if needed, publish, track.
 
 After installing the plugin, sign in with your Lemonvite account (OAuth,
 no API key). Creating a draft never publishes, charges, or contacts anyone;
-publishing costs one publish credit and delivers the invitations.
+publishing costs one account credit plus any extra phone batches and delivers the invitations.
+Review the event's publishing_price before confirming. The same account credits
+also cover confirmed phone allowance increases after publishing; spent credits cannot be reused.
 
 ## Install the full plugin (recommended)
 
