@@ -100,8 +100,9 @@ below can be done on the website too.
 
 ## Contacts
 
-The host's Lemonvite contact list (address book) holds people they have invited
-before or saved; guests added to an invitation are saved there too.
+The host's Lemonvite contact list (address book) holds people they have saved
+or invited before. Guests added to an invitation are saved there too, but only
+those with an email or phone number; a name-only guest is not.
 
 - **Find** — `lemonvite_search_contacts` with part of a name, email or phone
   ("alice"). It returns up to 50 matches and the total; when there are more,
@@ -112,7 +113,9 @@ before or saved; guests added to an invitation are saved there too.
   payment_required, immediate delivery on a published invitation). "Find Alice
   in my contacts and invite her" is a search, then an invite.
 - **Save or delete** — `lemonvite_add_contacts` saves up to 50 people for
-  later without inviting anyone; details already saved are not saved again.
+  later without inviting anyone. Contacts are matched by email or phone, so one
+  whose email or phone is already saved is not saved again; a name-only contact
+  is saved every time, so search before saving it again.
   `lemonvite_remove_contacts` deletes contacts permanently. Neither changes a
   guest list.
 
