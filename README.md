@@ -6,7 +6,8 @@
 Create, design and send digital invitations with RSVP tracking from Claude
 Code or Codex. The plugin bundles the Lemonvite MCP connection
 (`https://www.lemonvite.com/api/mcp`) and ships the skill that teaches the workflow: draft, review,
-add guests, pay if needed, publish, track.
+add guests or invite them from your Lemonvite contacts, pay if needed, publish,
+track.
 
 After installing the plugin, sign in with your Lemonvite account (OAuth,
 no API key). Creating a draft never publishes, charges, or contacts anyone;
@@ -71,7 +72,7 @@ assistant and sign in separately, or install the full plugin above.
 - `.agents/plugins/marketplace.json`: Codex marketplace
 - `.claude-plugin/marketplace.json`: Claude marketplace
 - `plugins/lemonvite/`: self-contained plugin bundle with both manifests,
-  `.mcp.json`, setup instructions and license
+  `.mcp.json`, its own README, setup instructions and license
 - `plugins/lemonvite/skills/lemonvite-invitations/SKILL.md`: skill, identical to
   https://www.lemonvite.com/.well-known/agent-skills/lemonvite-invitations/SKILL.md
 

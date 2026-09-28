@@ -3,6 +3,9 @@
   "owner": {
     "name": "Lemonvite"
   },
+  "metadata": {
+    "description": "The Lemonvite plugin: digital invitations with RSVP tracking, from your assistant."
+  },
   "plugins": [
     {
       "name": "lemonvite",

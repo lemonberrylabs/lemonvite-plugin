@@ -1,6 +1,7 @@
 {
   "name": "lemonvite",
-  "version": "1.3.0",
+  "displayName": "Lemonvite",
+  "version": "1.4.0",
   "description": "Create, design and send digital invitations with RSVP tracking from your assistant, through the Lemonvite MCP server.",
   "author": {
     "name": "Lemonvite",
