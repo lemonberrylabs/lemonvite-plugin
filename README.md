@@ -2,6 +2,7 @@
 
 [![Available on Smithery](./assets/smithery-badge.svg)](https://smithery.ai/servers/lemonvite/lemonvite)
 [![MCP Registry: Listed](./assets/mcp-registry-badge.svg)](https://registry.modelcontextprotocol.io/?q=com.lemonvite%2Flemonvite)
+[![Listed on mcpservers.org](https://mcpservers.org/badge.svg)](https://mcpservers.org/servers/lemonberrylabs/lemonvite-plugin)
 
 Create, design and send digital invitations with RSVP tracking from Claude
 Code or Codex. The plugin bundles the Lemonvite MCP connection
