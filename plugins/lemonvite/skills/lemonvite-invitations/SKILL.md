@@ -83,7 +83,13 @@ below can be done on the website too.
    meaning the host confirmed those people agreed to receive texts. When the
    result says some guests may not have been reached (unsubscribed or opted
    out), pass that on with the guest-list link it gives.
-   `lemonvite_update_guests` and `lemonvite_remove_guests` change the list.
+   `lemonvite_remove_guests` takes people off the list.
+   `lemonvite_update_guests` edits a saved guest and changes only the fields
+   you pass: name, email, phone, the reply recorded for them (`rsvp`), and how
+   many adults and kids they may bring (`max_adults`, `max_kids`). Find the
+   guest by name with `lemonvite_list_guests`. To put a contact's number or
+   email on a guest ("add Rich's phone to Ellie's invitation"), look the
+   contact up with `lemonvite_search_contacts` and pass the value.
    For people already in the host's contact list, see **Contacts** below.
 5. **Pay if needed** — publishing costs one credit plus any extra phone batches. Review the returned publishing_price with the host. When
    `payment_status` says a credit is needed, `lemonvite_start_checkout` returns
@@ -97,6 +103,8 @@ below can be done on the website too.
 7. **Track** — `lemonvite_get_rsvp_summary` for totals; `lemonvite_list_guests`
    with `rsvp_status` to answer "who has not replied", and for each guest's
    note and answers to the custom questions ("who is vegetarian").
+   `lemonvite_open_guest_desk` shows the guest list on screen where the
+   assistant can display it; the host filters it and removes guests there.
 
 ## Contacts
 
